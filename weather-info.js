@@ -6,7 +6,7 @@ async function addWeatherInfo(city){
     }
     
     return await new Promise((resolve, reject) => {
-        const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city.name + '&appid=8d95d90347337455ac1ccd658337b2aa'
+        const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city.name + '&appid=' + process.env.WEATHER_API_KEY
         //console.log(url)
         axios.get(url, config)
         .then(function (response) {
